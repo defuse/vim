@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/var/www/devel'
+let g:netrw_dirhist_2='/home/firexware/wk/codefiles'
+let g:netrw_dirhist_3='/etc/munin/munin-conf.d'
+let g:netrw_dirhist_4='/home/firexware/Desktop/synergy-1.4.12-Source/src/lib'
