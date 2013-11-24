@@ -1,4 +1,8 @@
 " ============= FUNCTIONALITY =============
+    " This is not a virus. It is required by pathogen.vim, which does something
+    " or other with plugins.
+    execute pathogen#infect()
+
     set nocompatible
 
     " Make j,k move by screen lines instead of file lines.
@@ -239,6 +243,9 @@
       \ }
 
     set tw=80
+
+    " Highlight other references to the variable under the cursor
+    " autocmd CursorMoved * exe printf('match NonText /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " ================ VISUAL =================
 
