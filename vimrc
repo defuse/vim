@@ -5,6 +5,9 @@
 
     set nocompatible
 
+    " Don't leak shit to the .viminfo file in my home directory.
+    set viminfo="NONE"
+
     " Make j,k move by screen lines instead of file lines.
     " WARNING: If you use this vimrc, make sure you understand the implications
     " of the following two mappings, especially if you use macros frequently.
@@ -94,6 +97,8 @@
     au InsertLeave * set nopaste
     set sidescrolloff=20
     set wrap linebreak textwidth=0
+    " I think i like not wrapping visually better... trying it...
+    set nowrap
     " Automatic indentation based on file type
     filetype indent on
     filetype plugin on
@@ -246,6 +251,18 @@
 
     " Highlight other references to the variable under the cursor
     " autocmd CursorMoved * exe printf('match NonText /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
+    autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
+    " Make sure we don't syntax check when a file is open as doing so might lead
+    " to vulnerabilities or performance issues.
+    let g:syntastic_check_on_open = 0
+    " Always stick detected errors into the location list.
+    let g:syntastic_always_populate_loc_list=1
+    " Automatically open when errors are detected and close when there are none.
+    let g:syntastic_auto_loc_list=1
+    " Default only to 5 lines instead of 10 (better when in the terminal)
+    let g:syntastic_loc_list_height = 5
 
 " ================ VISUAL =================
 
