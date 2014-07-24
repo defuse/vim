@@ -97,8 +97,6 @@
     au InsertLeave * set nopaste
     set sidescrolloff=20
     set wrap linebreak textwidth=0
-    " I think i like not wrapping visually better... trying it...
-    set nowrap
     " Automatic indentation based on file type
     filetype indent on
     filetype plugin on
@@ -119,6 +117,10 @@
     set nobackup
     set nowb
     set noswapfile
+
+    " By default, J and gq put two spaces after a period.
+    " I like one space after a period, so turn that off.
+    set nojoinspaces
 
     " More intuitive selecting in visual mode
     set selection=exclusive
@@ -214,6 +216,7 @@
     " Make snipmate HTML snippets work in php and eruby files
     au BufRead,BufNewFile *.php set filetype=php.html
     au BufRead,BufNewFile *.erb set filetype=eruby.html
+    au BufRead,BufNewFile *.md set filetype=markdown
 
     set iskeyword +=-,_
 
@@ -263,6 +266,9 @@
     let g:syntastic_auto_loc_list=1
     " Default only to 5 lines instead of 10 (better when in the terminal)
     let g:syntastic_loc_list_height = 5
+
+    " For easy updating of work standup log
+    command Standup !git commit -a -m "update Taylor's standup log"; git push
 
 " ================ VISUAL =================
 
