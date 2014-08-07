@@ -329,6 +329,12 @@
         endif
     endif
 
+    " Highlight unwanted whitespace
+    highlight TrailingWhitespace ctermbg=red guibg=red
+    highlight TabWhitespace ctermbg=darkgreen guibg=darkgreen
+    autocmd Syntax * syn match TrailingWhitespace /\s\+$/
+    autocmd Syntax * syn match TabWhitespace /[\t]/
+
     " Highlight the line the cursor is on
     set cursorline
 
