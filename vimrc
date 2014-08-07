@@ -332,8 +332,10 @@
     " Highlight unwanted whitespace
     highlight TrailingWhitespace ctermbg=red guibg=red
     highlight TabWhitespace ctermbg=darkgreen guibg=darkgreen
+    highlight DoubleSpaceAfterPeriod ctermbg=red guibg=red
     autocmd Syntax * syn match TrailingWhitespace /\s\+$/
     autocmd Syntax * syn match TabWhitespace /[\t]/
+    autocmd Syntax * syn match DoubleSpaceAfterPeriod /\.  /
 
     " Highlight the line the cursor is on
     set cursorline
