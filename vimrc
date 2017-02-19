@@ -270,6 +270,11 @@
     " For easy updating of work standup log
     command Standup !git commit -a -m "update Taylor's standup log"; git push
 
+    " Important for security (modlines are 'not guaranteed to be 100% secure')
+    " according to the manual.
+    set modelines=0
+    set nomodeline
+
 " ================ VISUAL =================
 
     colorscheme dw_cyan
